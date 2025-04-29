@@ -1,0 +1,223 @@
+/* Import Poppins and Nunito fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+/* Body background transitions */
+body {
+  background-color: #F3F4F6;
+  color: #1F2937;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  font-family: 'Poppins', 'Nunito', sans-serif;
+}
+
+body.dark-mode {
+  background-color: #1F2937;
+  color: #F3F4F6;
+}
+
+/* Wrapper for welcome page */
+.welcome-wrapper {
+  padding-top: 2rem;
+  position: relative;
+}
+
+/* Welcome Section Styles */
+.welcome-container {
+  background-color: #F3F4F6;
+  padding: 4rem 2.5rem;
+  text-align: center;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body.dark-mode .welcome-container {
+  background-color: #1F2937;
+}
+
+.welcome-img {
+  max-width: 400px;
+  width: 90%;
+  height: auto;
+  margin-bottom: 2.5rem;
+}
+
+.welcome-title {
+  font-size: 3rem;
+  color: #1F2937;
+  margin-bottom: 1.2rem;
+  text-shadow: 1px 1px 2px #7C3AED;
+  font-family: 'Poppins', 'Nunito', sans-serif;
+}
+
+body.dark-mode .welcome-title {
+  color: #F3F4F6;
+  text-shadow: 1px 1px 2px #9333EA;
+}
+
+.welcome-text {
+  font-size: 1.4rem;
+  color: #2563EB;
+  max-width: 800px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  font-family: 'Nunito', 'Poppins', sans-serif;
+}
+
+body.dark-mode .welcome-text {
+  color: #93C5FD;
+}
+
+.play-button {
+  background-color: #FACC15;
+  color: #1F2937;
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Poppins', 'Nunito', sans-serif;
+}
+
+.play-button:hover {
+  background-color: #e0b814;
+  color: #7C3AED;
+}
+
+body.dark-mode .play-button {
+  background-color: #FBBF24;
+  color: #111827;
+}
+
+body.dark-mode .play-button:hover {
+  background-color: #facc15;
+  color: #C084FC;
+}
+
+/* Floating Theme Toggle Button (Right) */
+.theme-toggle-floating {
+  position: fixed;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+/* Floating Speech Button (Left) */
+.speech-button-floating {
+  position: fixed;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+/* Theme Toggle Button */
+.toggle-theme-button {
+  background: transparent;
+  border: 2px solid #1F2937;
+  color: #1F2937;
+  padding: 0.75rem;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', 'Nunito', sans-serif;
+}
+
+body.dark-mode .toggle-theme-button {
+  border-color: #F3F4F6;
+  color: #F3F4F6;
+}
+
+.toggle-theme-button:hover,
+.toggle-theme-button:focus {
+  background-color: #e0b814;
+  color: #7C3AED;
+  outline: none;
+}
+
+body.dark-mode .toggle-theme-button:hover,
+body.dark-mode .toggle-theme-button:focus {
+  background-color: #facc15;
+  color: #C084FC;
+}
+
+/* Speech (Read Aloud) Button */
+.read-aloud-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.75rem;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  font-family: 'Nunito', 'Poppins', sans-serif;
+}
+
+.read-aloud-button:hover {
+  background-color: #45a049;
+}
+
+body.dark-mode .read-aloud-button {
+  background-color: #2D7D46;
+}
+
+body.dark-mode .read-aloud-button:hover {
+  background-color: #3b9d6c;
+}
+
+/* ======= Responsive Design ======= */
+
+/* Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .welcome-img { max-width: 350px; }
+  .welcome-title { font-size: 2.6rem; }
+  .welcome-text { font-size: 1.25rem; padding: 0 1.5rem; }
+  .play-button { font-size: 1.2rem; padding: 0.95rem 2.3rem; }
+  .theme-toggle-floating,
+  .speech-button-floating {
+    top: 90%;
+    transform: translateY(-90%);
+  }
+}
+
+/* Mobile Devices (up to 767px) */
+@media (max-width: 767px) {
+  .welcome-container {
+    padding: 3rem 1.5rem;
+  }
+  .welcome-img { max-width: 280px; }
+  .welcome-title { font-size: 2.2rem; }
+  .welcome-text { font-size: 1.15rem; padding: 0 1rem; }
+  .play-button { font-size: 1.1rem; padding: 0.8rem 2rem; }
+  .theme-toggle-floating,
+  .speech-button-floating {
+    top: auto;
+    bottom: 1rem;
+    transform: none;
+  }
+}
+
+/* Extra Small Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+  .welcome-img { max-width: 240px; }
+  .welcome-title { font-size: 1.8rem; }
+  .welcome-text { font-size: 1.05rem; }
+  .play-button { font-size: 1rem; padding: 0.7rem 1.5rem; }
+}

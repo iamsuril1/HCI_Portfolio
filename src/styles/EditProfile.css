@@ -1,0 +1,220 @@
+/* === Background container === */
+.edit-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+/* Light Mode Background */
+.edit-profile-container.light {
+  background: linear-gradient(135deg, #f3f4f6, #e0e7ff); /* Light Purple/Gray */
+}
+
+/* Dark Mode Background */
+.edit-profile-container.dark {
+  background: linear-gradient(135deg, #111827, #1f2937); /* Dark Blue/Gray */
+}
+
+/* === Form Container === */
+.edit-profile-form {
+  background-color: transparent;
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  border: none;
+  position: relative;
+}
+
+/* === Title === */
+.edit-profile-form h2 {
+  margin-bottom: 20px;
+  font-size: 48px;
+  color: #1f2937; /* Dark Gray */
+  text-align: center;
+  transition: color 0.3s;
+}
+
+/* Dark Mode Title */
+.edit-profile-container.dark .edit-profile-form h2 {
+  color: #f9fafb; /* Light Text */
+}
+
+/* === Floating Input === */
+.floating-input {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.floating-input input {
+  width: 100%;
+  padding: 22px 16px 18px;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #1f2937;
+  border-bottom: 2px solid #1f2937;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+/* Dark Mode Input Text and Border */
+.edit-profile-container.dark .floating-input input {
+  color: #f9fafb;
+  border-bottom: 2px solid #f9fafb;
+}
+
+/* Input Label */
+.floating-input label {
+  position: absolute;
+  top: 22px;
+  left: 16px;
+  font-size: 20px;
+  color: #7c3aed; /* Purple */
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background-color: transparent;
+  padding: 0 8px;
+}
+
+/* Floating Label when Focused */
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 14px;
+  font-size: 16px;
+  color: #1f2937;
+}
+
+/* Dark Mode Floating Label */
+.edit-profile-container.dark .floating-input input:focus + label,
+.edit-profile-container.dark .floating-input input:not(:placeholder-shown) + label {
+  color: #f9fafb;
+}
+
+/* === Save Changes Button === */
+.edit-profile-form button[type="submit"] {
+  display: block;
+  margin: 30px auto 20px;
+  padding: 1.5rem 3.5rem;
+  background-color: #facc15; /* Yellow */
+  color: #1f2937; /* Dark Gray */
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect on submit button */
+.edit-profile-form button[type="submit"]:hover {
+  background-color: #e0b814;
+  color: #7c3aed; /* Purple hover text */
+}
+
+/* === Error Message === */
+.error-message {
+  color: red;
+  font-size: 1rem;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* === Dark Mode Toggle Button === */
+.dark-mode-toggle {
+  background: transparent;
+  border: 2px solid #facc15;
+  padding: 10px;
+  margin: 0 auto 20px;
+  font-size: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #facc15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+/* Toggle Button Hover */
+.dark-mode-toggle:hover {
+  background-color: #facc15;
+  color: #1f2937;
+  transform: rotate(20deg);
+}
+
+/* === Speech Button Floating === */
+.speech-button-floating {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.speech-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem;
+  font-size: 1.6rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.speech-button:hover {
+  background-color: #45a049;
+}
+
+body.dark-mode .speech-button {
+  background-color: #2D7D46;
+}
+
+body.dark-mode .speech-button:hover {
+  background-color: #3b9d6c;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .edit-profile-form h2 {
+    font-size: 36px;
+  }
+
+  .floating-input input,
+  .edit-profile-form button {
+    font-size: 18px;
+  }
+
+  .edit-profile-form {
+    padding: 30px;
+    width: 90%;
+  }
+
+  .dark-mode-toggle {
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+    margin: 20px auto;
+  }
+
+  .speech-button-floating {
+    left: 15px;
+    top: 80%;
+  }
+}

@@ -1,0 +1,363 @@
+/* 🌐 Import Poppins and Nunito Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  /* Light Mode Colors */
+  --bg-color-light: #F3F4F6;
+  --text-color-light: #1F2937;
+  --title-shadow-light: #7C3AED;
+  --highlight-color-light: #2563EB;
+  --button-bg-light: #FACC15;
+  --button-text-light: #1F2937;
+  --button-hover-bg-light: #e0b814;
+  --button-hover-text-light: #7C3AED;
+  --placeholder-color-light: #6B7280;
+
+  /* Dark Mode Colors */
+  --bg-color-dark: #1F2937;
+  --text-color-dark: #F3F4F6;
+  --title-shadow-dark: #9333EA;
+  --highlight-color-dark: #93C5FD;
+  --button-bg-dark: #FBBF24;
+  --button-text-dark: #111827;
+  --button-hover-bg-dark: #facc15;
+  --button-hover-text-dark: #C084FC;
+  --placeholder-color-dark: #D1D5DB;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Poppins', 'Nunito', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Accessibility: Keyboard Focus */
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--highlight-color-light);
+  outline-offset: 4px;
+}
+
+/* Light Mode Styles */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color-light);
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-form {
+  background-color: var(--bg-color-light);
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  border: none;
+  font-family: 'Nunito', 'Poppins', sans-serif;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  font-size: 48px;
+  color: var(--text-color-light);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-form p {
+  font-size: 20px;
+  color: var(--highlight-color-light);
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.floating-input {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.floating-input input {
+  width: 100%;
+  padding: 22px 16px 18px;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--text-color-light);
+  border-bottom: 2px solid var(--text-color-light);
+  font-family: 'Nunito', sans-serif;
+}
+
+.floating-input label {
+  position: absolute;
+  top: 22px;
+  left: 16px;
+  font-size: 20px;
+  color: var(--title-shadow-light);
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background-color: var(--bg-color-light);
+  padding: 0 8px;
+}
+
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 14px;
+  font-size: 16px;
+  color: var(--text-color-light);
+}
+
+.login-form button {
+  display: block;
+  margin: 30px auto 20px;
+  padding: 1.5rem 3.5rem;
+  background-color: var(--button-bg-light);
+  color: var(--button-text-light);
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-form button:hover {
+  background-color: var(--button-hover-bg-light);
+  color: var(--button-hover-text-light);
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 18px;
+  color: var(--highlight-color-light);
+  font-family: 'Nunito', sans-serif;
+}
+
+.signup-link span {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.signup-link span:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  font-size: 1rem;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .login-form h2 {
+    font-size: 40px;
+  }
+
+  .floating-input input,
+  .login-form button {
+    font-size: 18px;
+  }
+
+  .login-form {
+    padding: 30px;
+    width: 90%;
+  }
+
+  .signup-link {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-form h2 {
+    font-size: 32px;
+  }
+
+  .login-form p {
+    font-size: 18px;
+  }
+
+  .floating-input input {
+    font-size: 16px;
+  }
+
+  .login-form button {
+    font-size: 16px;
+    padding: 1.2rem 2.8rem;
+  }
+
+  .signup-link {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form h2 {
+    font-size: 28px;
+  }
+
+  .login-form p {
+    font-size: 16px;
+  }
+
+  .floating-input input {
+    font-size: 15px;
+  }
+
+  .login-form button {
+    font-size: 15px;
+    padding: 1rem 2.5rem;
+  }
+
+  .signup-link {
+    font-size: 14px;
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .login-container {
+  background-color: var(--bg-color-dark);
+}
+
+body.dark-mode .login-form {
+  background-color: var(--bg-color-dark);
+}
+
+body.dark-mode .login-form h2 {
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .login-form p {
+  color: var(--highlight-color-dark);
+}
+
+body.dark-mode .floating-input input {
+  border-bottom: 2px solid var(--text-color-dark);
+}
+
+body.dark-mode .floating-input label {
+  color: var(--title-shadow-dark);
+}
+
+body.dark-mode .login-form button {
+  background-color: var(--button-bg-dark);
+  color: var(--button-text-dark);
+}
+
+body.dark-mode .login-form button:hover {
+  background-color: var(--button-hover-bg-dark);
+  color: var(--button-hover-text-dark);
+}
+
+/* Placeholder Color for Light and Dark Mode */
+.floating-input input::placeholder {
+  color: var(--placeholder-color-light);
+}
+
+body.dark-mode .floating-input input::placeholder {
+  color: var(--placeholder-color-dark);
+}
+
+/* 🌙 Dark Mode Toggle Button Floating */
+.theme-toggle-floating {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.theme-toggle-floating button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--highlight-color-light);
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  pointer-events: auto;
+}
+
+.theme-toggle-floating button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 🎤 Speech Button Floating */
+.speech-button-floating {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.speech-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem;
+  font-size: 1.6rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  pointer-events: auto;
+}
+
+.speech-button:hover {
+  background-color: #45a049;
+}
+
+body.dark-mode .speech-button {
+  background-color: #2D7D46;
+}
+
+body.dark-mode .speech-button:hover {
+  background-color: #3b9d6c;
+}
+
+/* 🌟 Theme Mode Activated Popup */
+.theme-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 9999;
+  animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+}

@@ -1,0 +1,280 @@
+/* === FONT IMPORT === */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+/* === CSS VARIABLES === */
+:root {
+  --bg-color-light: #F3F4F6;
+  --bg-color-dark: #1F2937;
+
+  --text-color-light: #1F2937;
+  --text-color-dark: #F3F4F6;
+
+  --highlight-color-light: #2563EB;
+  --highlight-color-dark: #93C5FD;
+
+  --button-bg-light: #FACC15;
+  --button-text-light: #1F2937;
+  --button-hover-bg-light: #e0b814;
+  --button-hover-text-light: #7C3AED;
+
+  --button-bg-dark: #FBBF24;
+  --button-text-dark: #111827;
+  --button-hover-bg-dark: #facc15;
+  --button-hover-text-dark: #C084FC;
+}
+
+/* === GLOBAL STYLES === */
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Nunito', sans-serif;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* === DARK MODE TOGGLE BUTTON === */
+.dark-mode-toggle {
+  background: transparent;
+  border: 2px solid var(--text-color-light);
+  color: var(--text-color-light);
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .dark-mode-toggle {
+  border-color: var(--text-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+  background-color: var(--button-hover-bg-dark);
+  color: var(--button-hover-text-dark);
+}
+
+/* === MAIN CONTAINER === */
+.choose-mode-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: var(--bg-color-light);
+}
+
+body.dark-mode .choose-mode-page {
+  background-color: var(--bg-color-dark);
+}
+
+/* === MODE SELECTION BOX === */
+.mode-box {
+  background-color: var(--bg-color-light);
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  padding: 2.5rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .mode-box {
+  background-color: var(--bg-color-dark);
+}
+
+/* === TITLES === */
+.mode-title {
+  font-size: 32px;
+  color: var(--text-color-light);
+  margin-bottom: 20px;
+}
+
+body.dark-mode .mode-title {
+  color: var(--text-color-dark);
+}
+
+.mode-subtitle {
+  font-size: 18px;
+  color: var(--highlight-color-light);
+  margin-bottom: 40px;
+}
+
+body.dark-mode .mode-subtitle {
+  color: var(--highlight-color-dark);
+}
+
+/* === SPLIT PANEL === */
+.mode-split {
+  display: flex;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+body.dark-mode .mode-split {
+  background-color: #2D3748;
+  border-color: #4A5568;
+}
+
+/* === LEFT & RIGHT OPTIONS === */
+.mode-half {
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.mode-image {
+  max-width: 140px;
+  height: auto;
+}
+
+.mode-half button {
+  padding: 1rem 2.5rem;
+  background-color: var(--button-bg-light);
+  color: var(--button-text-light);
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, border 0.3s ease;
+}
+
+.mode-half button:hover {
+  background-color: var(--button-hover-bg-light);
+  transform: scale(1.05);
+  border: 2px solid var(--button-hover-text-light);
+}
+
+body.dark-mode .mode-half button {
+  background-color: var(--button-bg-dark);
+  color: var(--button-text-dark);
+}
+
+body.dark-mode .mode-half button:hover {
+  background-color: var(--button-hover-bg-dark);
+  color: var(--button-hover-text-dark);
+}
+
+/* === DIVIDER === */
+.mode-divider {
+  width: 1px;
+  background-color: #e5e7eb;
+  height: 100%;
+}
+
+body.dark-mode .mode-divider {
+  background-color: #4A5568;
+}
+
+/* === RESPONSIVE TABLET & MOBILE === */
+@media (max-width: 768px) {
+  .mode-box {
+    padding: 1.8rem;
+  }
+
+  .mode-title {
+    font-size: 28px;
+  }
+
+  .mode-subtitle {
+    font-size: 16px;
+  }
+
+  .mode-split {
+    flex-direction: column;
+  }
+
+  .mode-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .mode-half {
+    padding: 1.5rem;
+  }
+
+  .mode-image {
+    max-width: 110px;
+  }
+
+  .mode-half button {
+    font-size: 1.1rem;
+  }
+
+  .choose-mode-page {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mode-title {
+    font-size: 24px;
+  }
+
+  .mode-subtitle {
+    font-size: 14px;
+  }
+
+  .mode-half button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+}
+
+/* === 🎤 Speech Button Floating === */
+.speech-button-floating {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.speech-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem;
+  font-size: 1.6rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.speech-button:hover {
+  background-color: #45a049;
+}
+
+body.dark-mode .speech-button {
+  background-color: #2D7D46;
+}
+
+body.dark-mode .speech-button:hover {
+  background-color: #3b9d6c;
+}
+
+.speech-button:focus {
+  outline: 3px solid #FFBF47;
+}

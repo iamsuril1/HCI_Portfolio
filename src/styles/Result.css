@@ -1,0 +1,242 @@
+/* Result page styles */
+.result-container {
+  padding: 2rem;
+  background-color: #F3F4F6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.result-title {
+  font-size: 2.5rem;
+  color: #1F2937;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.result-box {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.result-subtitle {
+  font-size: 1.5rem;
+  color: #1F2937;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.result-score {
+  font-size: 1.2rem;
+  color: #4B5563;
+  margin-bottom: 1rem;
+}
+
+.result-player-scores {
+  margin-bottom: 2rem;
+}
+
+.result-player-score {
+  font-size: 1.2rem;
+  color: #4B5563;
+  margin-bottom: 1rem;
+}
+
+.result-winner {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #10B981;
+  margin-bottom: 1rem;
+}
+
+.result-winner.tie {
+  color: #6B7280;
+}
+
+.result-mode {
+  font-size: 1.2rem;
+  color: #4B5563;
+  margin-bottom: 2rem;
+}
+
+.result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.play-again,
+.home,
+.leaderboard {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+}
+
+.play-again {
+  background-color: #2563EB;
+  color: white;
+}
+
+.play-again:hover {
+  background-color: #1E40AF;
+  transform: scale(1.05);
+}
+
+.home {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.home:hover {
+  background-color: #388E3C;
+  transform: scale(1.05);
+}
+
+.leaderboard {
+  background-color: #F59E0B;
+  color: white;
+}
+
+.leaderboard:hover {
+  background-color: #D97706;
+  transform: scale(1.05);
+}
+
+.leaderboard:focus {
+  outline: 2px solid #F59E0B;
+  outline-offset: 3px;
+}
+
+/* Focus styles for accessibility */
+.play-again:focus,
+.home:focus,
+.leaderboard:focus {
+  outline: 2px solid #2563EB;
+  outline-offset: 3px;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .result-title {
+    font-size: 2rem;
+  }
+
+  .result-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .result-score,
+  .result-player-score {
+    font-size: 1rem;
+  }
+
+  .result-player-scores {
+    margin-bottom: 1rem;
+  }
+
+  .result-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .play-again,
+  .home,
+  .leaderboard {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-container {
+    padding: 1rem;
+  }
+
+  .result-title {
+    font-size: 1.6rem;
+  }
+
+  .result-subtitle {
+    font-size: 1rem;
+  }
+
+  .result-score,
+  .result-player-score {
+    font-size: 0.95rem;
+  }
+
+  .result-player-scores {
+    margin-bottom: 1rem;
+  }
+
+  .result-actions {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .play-again,
+  .home,
+  .leaderboard {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* Floating Speech Button */
+.speech-button-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.speech-button {
+  background-color: #2563EB;
+  color: white;
+  border-radius: 50%;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.speech-button:hover {
+  background-color: #1E40AF;
+  transform: scale(1.1);
+}
+
+.speech-button:focus {
+  outline: 2px solid #F59E0B;
+  outline-offset: 3px;
+}

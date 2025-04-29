@@ -1,0 +1,279 @@
+/* Global Styles */
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Accessibility: Keyboard Focus */
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid #2563EB; /* Highlight color */
+  outline-offset: 4px;
+}
+
+/* Light Mode Styles */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3F4F6; /* Light background */
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.signup-form {
+  background-color: #F3F4F6; /* Light background */
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.signup-form h2 {
+  margin-bottom: 20px;
+  font-size: 48px;
+  color: #1F2937; /* Dark text */
+  text-align: center;
+}
+
+.signup-form p {
+  font-size: 20px;
+  color: #2563EB; /* Highlight color */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.floating-input {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.floating-input input {
+  width: 100%;
+  padding: 22px 16px 18px;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #1F2937; /* Dark text */
+  border-bottom: 2px solid #1F2937; /* Dark text */
+}
+
+.floating-input label {
+  position: absolute;
+  top: 22px;
+  left: 16px;
+  font-size: 20px;
+  color: #7C3AED; /* Title shadow color */
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background-color: #F3F4F6; /* Light background */
+  padding: 0 8px;
+}
+
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 14px;
+  font-size: 16px;
+  color: #1F2937; /* Dark text */
+}
+
+.signup-form button {
+  display: block;
+  margin: 30px auto 20px;
+  padding: 1.5rem 3.5rem;
+  background-color: #FACC15; /* Button background */
+  color: #1F2937; /* Dark text */
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signup-form button:hover {
+  background-color: #e0b814; /* Button hover background */
+  color: #7C3AED; /* Hover text color */
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #2563EB; /* Highlight color */
+}
+
+.signup-link span {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.signup-link span:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  font-size: 1rem;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .signup-form h2 {
+    font-size: 36px;
+  }
+
+  .floating-input input,
+  .signup-form button {
+    font-size: 18px;
+  }
+
+  .signup-form {
+    padding: 30px;
+    width: 90%;
+  }
+
+  .signup-link {
+    font-size: 16px;
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1F2937; /* Dark background */
+  color: #F3F4F6; /* Light text */
+}
+
+body.dark-mode .signup-container {
+  background-color: #1F2937; /* Dark background */
+}
+
+body.dark-mode .signup-form {
+  background-color: #1F2937; /* Dark background */
+}
+
+body.dark-mode .signup-form h2 {
+  color: #F3F4F6; /* Light text */
+}
+
+body.dark-mode .signup-form p {
+  color: #93C5FD; /* Light highlight */
+}
+
+body.dark-mode .floating-input input {
+  border-bottom: 2px solid #F3F4F6; /* Light text */
+}
+
+body.dark-mode .floating-input label {
+  color: #9333EA; /* Dark title shadow */
+}
+
+body.dark-mode .signup-form button {
+  background-color: #FBBF24; /* Dark button background */
+  color: #111827; /* Dark button text */
+}
+
+body.dark-mode .signup-form button:hover {
+  background-color: #facc15; /* Dark button hover */
+  color: #C084FC; /* Dark hover text */
+}
+
+/* Placeholder Color for Light and Dark Mode */
+.floating-input input::placeholder {
+  color: #6B7280; /* Light placeholder */
+}
+
+body.dark-mode .floating-input input::placeholder {
+  color: #D1D5DB; /* Dark placeholder */
+}
+
+/* 🌙 Dark Mode Toggle Button Floating */
+.theme-toggle-floating {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: grab;
+  z-index: 1000;
+}
+
+.theme-toggle-floating button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2563EB; /* Highlight color */
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.theme-toggle-floating button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 🎤 Speech Button Floating */
+.speech-button-floating {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.speech-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem;
+  font-size: 1.6rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.speech-button:hover {
+  background-color: #45a049;
+}
+
+body.dark-mode .speech-button {
+  background-color: #2D7D46;
+}
+
+body.dark-mode .speech-button:hover {
+  background-color: #3b9d6c;
+}
+
+/* 🌟 Theme Mode Activated Popup */
+.theme-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 9999;
+  animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+}
