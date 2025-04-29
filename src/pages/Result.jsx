@@ -64,7 +64,7 @@ const Result = () => {
   };
 
   const handlePlayAgain = () => {
-    navigate(`/quiz/${topic}/${mode}`);
+    navigate(`/choose-topic`);
   };
 
   const handleGoHome = () => {

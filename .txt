@@ -1,0 +1,42 @@
+const questionsData = [
+  // Science
+  { topic: "science", question: "What is the chemical symbol for water?", options: ["H2O", "O2", "CO2", "H2"], correctAnswer: "H2O" },
+  { topic: "science", question: "What planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter", "Venus"], correctAnswer: "Mars" },
+  { topic: "science", question: "What is the powerhouse of the cell?", options: ["Nucleus", "Mitochondria", "Chloroplast", "Ribosome"], correctAnswer: "Mitochondria" },
+
+  // History
+  { topic: "history", question: "Who was the first President of the United States?", options: ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"], correctAnswer: "George Washington" },
+  { topic: "history", question: "In which year did World War II end?", options: ["1945", "1939", "1918", "1950"], correctAnswer: "1945" },
+  { topic: "history", question: "Who was known as the 'Iron Lady'?", options: ["Indira Gandhi", "Margaret Thatcher", "Angela Merkel", "Golda Meir"], correctAnswer: "Margaret Thatcher" },
+
+  // Math
+  { topic: "math", question: "What is the square root of 144?", options: ["10", "11", "12", "13"], correctAnswer: "12" },
+  { topic: "math", question: "What is 7 x 8?", options: ["54", "56", "58", "60"], correctAnswer: "56" },
+  { topic: "math", question: "What is the value of Pi (approx)?", options: ["2.14", "3.14", "4.13", "3.41"], correctAnswer: "3.14" },
+
+  // Literature
+  { topic: "literature", question: "Who wrote 'Romeo and Juliet'?", options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"], correctAnswer: "William Shakespeare" },
+  { topic: "literature", question: "What is the name of the wizarding school in 'Harry Potter'?", options: ["Ilvermorny", "Hogwarts", "Beauxbatons", "Durmstrang"], correctAnswer: "Hogwarts" },
+  { topic: "literature", question: "Who is the author of '1984'?", options: ["George Orwell", "Aldous Huxley", "Ray Bradbury", "J.K. Rowling"], correctAnswer: "George Orwell" },
+
+  // Geography
+  { topic: "geography", question: "What is the capital of France?", options: ["Paris", "Rome", "Madrid", "Berlin"], correctAnswer: "Paris" },
+  { topic: "geography", question: "Which is the largest ocean on Earth?", options: ["Atlantic", "Indian", "Arctic", "Pacific"], correctAnswer: "Pacific" },
+  { topic: "geography", question: "Mount Everest is located in which mountain range?", options: ["Alps", "Andes", "Himalayas", "Rockies"], correctAnswer: "Himalayas" },
+
+  // Sports
+  { topic: "sports", question: "How many players are there in a football (soccer) team?", options: ["9", "10", "11", "12"], correctAnswer: "11" },
+  { topic: "sports", question: "In which sport is the term 'love' used?", options: ["Cricket", "Tennis", "Basketball", "Golf"], correctAnswer: "Tennis" },
+  { topic: "sports", question: "Which country hosted the 2020 Summer Olympics?", options: ["China", "Brazil", "Japan", "USA"], correctAnswer: "Japan" },
+
+  // Technology
+  { topic: "technology", question: "What does 'CPU' stand for?", options: ["Central Process Unit", "Central Processing Unit", "Computer Processing Unit", "Central Program Unit"], correctAnswer: "Central Processing Unit" },
+  { topic: "technology", question: "Who founded Microsoft?", options: ["Steve Jobs", "Elon Musk", "Bill Gates", "Mark Zuckerberg"], correctAnswer: "Bill Gates" },
+  { topic: "technology", question: "Which programming language is known for web development?", options: ["Python", "C++", "JavaScript", "Swift"], correctAnswer: "JavaScript" },
+
+  // Art
+  { topic: "art", question: "Who painted the Mona Lisa?", options: ["Pablo Picasso", "Vincent Van Gogh", "Leonardo da Vinci", "Claude Monet"], correctAnswer: "Leonardo da Vinci" },
+  { topic: "art", question: "Which art movement is Salvador Dalí associated with?", options: ["Cubism", "Impressionism", "Surrealism", "Realism"], correctAnswer: "Surrealism" },
+  { topic: "art", question: "What material is used in sculpting the statue of David?", options: ["Bronze", "Marble", "Granite", "Clay"], correctAnswer: "Marble" }
+];
+

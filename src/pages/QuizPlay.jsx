@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "../styles/QuizPlay.css";
 
@@ -69,7 +69,7 @@ const QuizPlay = () => {
   const [highlightCorrect, setHighlightCorrect] = useState(false);
 
   const correctSound = useMemo(() => new Audio("/sounds/correct.mp3"), []);
-  const wrongSound = useMemo(() => new Audio("/sounds/wrong.mp3"), []);
+  const wrongSound = useMemo(() => new Audio("/sounds/Wrong.mp3"), []);
   const timeoutSound = useMemo(() => new Audio("/sounds/timeout.mp3"), []);
 
   useEffect(() => {
@@ -110,11 +110,19 @@ const QuizPlay = () => {
     const correct = questions[currentIndex].correctAnswer;
     const isCorrect = answer === correct;
 
-    if (answer === null) timeoutSound.play();
-    else if (isCorrect) correctSound.play();
-    else wrongSound.play();
+    let sound;
+    if (answer === null) {
+      sound = timeoutSound;
+      setFeedback("Time's up!");
+    } else if (isCorrect) {
+      sound = correctSound;
+      setFeedback("Correct!");
+    } else {
+      sound = wrongSound;
+      setFeedback("Wrong!");
+    }
 
-    setFeedback(answer === null ? "Time's up!" : isCorrect ? "Correct!" : "Wrong!");
+    sound.play();
 
     if (isCorrect) {
       if (mode === "single") {
@@ -125,6 +133,8 @@ const QuizPlay = () => {
           : setPlayer2Score(prev => prev + 1);
       }
     }
+
+    const delay = (sound.duration || 1) * 1000;
 
     setTimeout(() => {
       if (mode === "single") {
@@ -145,7 +155,7 @@ const QuizPlay = () => {
           }
         }
       }
-    }, 1000);
+    }, delay);
   };
 
   const handleFiftyFifty = () => {
@@ -192,9 +202,11 @@ const QuizPlay = () => {
                 <button
                   key={i}
                   className="answer-button"
-                  style={highlightCorrect && opt === questions[currentIndex].correctAnswer
-                    ? { backgroundColor: "green" }
-                    : {}}
+                  style={
+                    highlightCorrect && opt === questions[currentIndex].correctAnswer
+                      ? { backgroundColor: "green" }
+                      : {}
+                  }
                   onClick={() => handleAnswer(opt)}
                 >
                   {opt}
@@ -206,8 +218,12 @@ const QuizPlay = () => {
           {feedback && <p className="feedback">{feedback}</p>}
 
           <div className="lifelines">
-            <button onClick={handleFiftyFifty} disabled={usedFiftyFifty}>50:50</button>
-            <button onClick={handlePhoneAFriend} disabled={usedPhoneAFriend}>📞</button>
+            <button onClick={handleFiftyFifty} disabled={usedFiftyFifty}>
+              50:50
+            </button>
+            <button onClick={handlePhoneAFriend} disabled={usedPhoneAFriend}>
+              📞
+            </button>
           </div>
         </div>
       ) : (
