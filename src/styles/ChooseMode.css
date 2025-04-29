@@ -23,10 +23,21 @@
   --button-hover-text-dark: #C084FC;
 }
 
+/* === FONT ASSIGNMENT === */
+h1, h2, h3, h4, h5, h6,
+.mode-title,
+.mode-subtitle {
+  font-family: 'Poppins', sans-serif;
+}
+
+body, p, span, a, li, button,
+.mode-half, .dark-mode-toggle, .speech-button {
+  font-family: 'Nunito', sans-serif;
+}
+
 /* === GLOBAL STYLES === */
 body {
   margin: 0;
-  font-family: 'Poppins', 'Nunito', sans-serif;
   background-color: var(--bg-color-light);
   color: var(--text-color-light);
 }

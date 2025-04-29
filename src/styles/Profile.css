@@ -1,4 +1,21 @@
-/* Background container */
+/* === IMPORT FONTS === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Nunito:wght@400;700&display=swap');
+
+/* === GLOBAL STYLES === */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif; /* Poppins as primary font */
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #111827, #1f2937); /* Dark Mode Gradient */
+}
+
+body {
+  background: linear-gradient(135deg, #f3f4f6, #e0e7ff); /* Light Mode Gradient */
+}
+
+/* === PROFILE CONTAINER === */
 .profile-container {
   padding: 3rem 2rem;
   min-height: 100vh;
@@ -19,7 +36,7 @@
   background: linear-gradient(135deg, #111827, #1f2937);
 }
 
-/* Dark Mode Toggle Button */
+/* === DARK MODE TOGGLE BUTTON === */
 .dark-mode-toggle {
   background: transparent;
   border: 2px solid #facc15;
@@ -43,21 +60,21 @@
   transform: rotate(20deg);
 }
 
-/* Profile Title */
+/* === PROFILE TITLE === */
 .profile-title {
   font-size: 2.5rem;
   color: #1f2937;
   font-weight: 700;
   margin-bottom: 3rem;
   transition: color 0.3s;
+  font-family: "Nunito", sans-serif; /* Nunito for title */
 }
 
-/* Dark Mode Title */
 .profile-container.dark .profile-title {
   color: #f9fafb;
 }
 
-/* Profile Content */
+/* === PROFILE CONTENT === */
 .profile-content {
   display: flex;
   justify-content: center;
@@ -69,7 +86,7 @@
   flex-wrap: wrap;
 }
 
-/* Info and Quizzes Box */
+/* === INFO AND QUIZZES BOX === */
 .profile-info,
 .recent-quizzes {
   background-color: white;
@@ -85,13 +102,12 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark Mode Box */
 .profile-container.dark .profile-info,
 .profile-container.dark .recent-quizzes {
   background-color: #1f2937;
 }
 
-/* Profile Name */
+/* === PROFILE NAME === */
 .profile-name {
   font-size: 2rem;
   color: #1f2937;
@@ -99,12 +115,11 @@
   margin-bottom: 1rem;
 }
 
-/* Dark Mode Profile Name */
 .profile-container.dark .profile-name {
   color: #facc15;
 }
 
-/* Profile Email, Role, Joined */
+/* === PROFILE EMAIL, ROLE, JOINED === */
 .profile-email,
 .profile-role,
 .profile-joined {
@@ -113,14 +128,13 @@
   margin: 0.5rem 0;
 }
 
-/* Dark Mode Text */
 .profile-container.dark .profile-email,
 .profile-container.dark .profile-role,
 .profile-container.dark .profile-joined {
   color: #d1d5db;
 }
 
-/* Recent Title */
+/* === RECENT TITLE === */
 .recent-title {
   font-size: 1.6rem;
   color: #7c3aed;
@@ -128,19 +142,18 @@
   margin-bottom: 1rem;
 }
 
-/* Dark Mode Recent Title */
 .profile-container.dark .recent-title {
   color: #facc15;
 }
 
-/* Quiz List */
+/* === QUIZ LIST === */
 .quiz-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Quiz Item */
+/* === QUIZ ITEM === */
 .quiz-item {
   font-size: 1.1rem;
   background-color: #facc15;
@@ -151,18 +164,17 @@
   font-weight: 500;
 }
 
-/* Dark Mode Quiz Item */
 .profile-container.dark .quiz-item {
   background-color: #facc15;
   color: #1f2937;
 }
 
-/* Profile Actions */
+/* === PROFILE ACTIONS === */
 .profile-actions {
   margin-top: 1rem;
 }
 
-/* Edit Button */
+/* === EDIT BUTTON === */
 .edit-button {
   padding: 1rem 2rem;
   font-size: 1.1rem;
@@ -175,14 +187,13 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover Edit Button */
 .edit-button:hover {
   background-color: #1e40af;
   transform: scale(1.05);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) { /* Tablet view */
   .profile-content {
     flex-direction: column;
     align-items: center;
@@ -215,7 +226,54 @@
   }
 }
 
-/* Speech Button Floating */
+@media (max-width: 768px) { /* Small tablet and below */
+  .profile-title {
+    font-size: 1.8rem;
+  }
+
+  .profile-name {
+    font-size: 1.6rem;
+  }
+
+  .recent-title {
+    font-size: 1.2rem;
+  }
+
+  .quiz-item {
+    font-size: 0.9rem;
+  }
+
+  .edit-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) { /* Mobile */
+  .profile-title {
+    font-size: 1.6rem;
+  }
+
+  .profile-name {
+    font-size: 1.4rem;
+  }
+
+  .recent-title {
+    font-size: 1rem;
+  }
+
+  .quiz-item {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .edit-button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* === SPEECH BUTTON === */
 .speech-button-floating {
   position: fixed;
   top: 50%;
@@ -224,7 +282,6 @@
   z-index: 1000;
 }
 
-/* Speech Button */
 .speech-button {
   background-color: #4CAF50;
   color: white;

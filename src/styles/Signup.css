@@ -1,6 +1,10 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@300;400;600&display=swap');
+
 /* Global Styles */
 body {
   transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: 'Nunito', sans-serif; /* Set default font */
 }
 
 /* Accessibility: Keyboard Focus */
@@ -36,6 +40,7 @@ button:focus-visible {
   font-size: 48px;
   color: #1F2937; /* Dark text */
   text-align: center;
+  font-family: 'Poppins', sans-serif; /* Poppins font for heading */
 }
 
 .signup-form p {
@@ -142,6 +147,26 @@ button:focus-visible {
 
   .signup-link {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-form h2 {
+    font-size: 28px;
+  }
+
+  .floating-input input,
+  .signup-form button {
+    font-size: 16px;
+  }
+
+  .signup-form {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .signup-link {
+    font-size: 14px;
   }
 }
 

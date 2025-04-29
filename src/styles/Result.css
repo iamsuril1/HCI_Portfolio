@@ -1,3 +1,6 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@300;400;600&display=swap');
+
 /* Result page styles */
 .result-container {
   padding: 2rem;
@@ -8,6 +11,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-family: 'Nunito', sans-serif;
 }
 
 .result-title {
@@ -15,6 +19,7 @@
   color: #1F2937;
   margin-bottom: 1rem;
   font-weight: 700;
+  font-family: 'Poppins', sans-serif;
 }
 
 .result-box {
@@ -32,6 +37,7 @@
   color: #1F2937;
   margin-bottom: 1rem;
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
 }
 
 .result-score {
