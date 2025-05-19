@@ -13,6 +13,8 @@ import Profile from "./pages/Profile";
 import Leaderboard from "./pages/Leaderboard"; 
 import PrivateRoute from "./components/PrivateRoute";
 import EditProfile from "./pages/EditProfile";
+import Feedback from "./pages/Feedback";
+import FAQ from "./pages/FAQ";
 
 const App = () => {
   return (
@@ -24,6 +26,9 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/editprofile" element={<EditProfile />} />
+        <Route path="/faq" element={<FAQ />} />
+         <Route path="/feedback" element={<Feedback />} />
+
         {/* Protected Routes */}
         <Route
           path="/choose-topic"

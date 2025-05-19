@@ -1,0 +1,234 @@
+/* Feedback.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  /* Light Mode Colors */
+  --bg-color-light: #F3F4F6;
+  --text-color-light: #1F2937;
+  --title-shadow-light: #7C3AED;
+  --highlight-color-light: #2563EB;
+  --button-bg-light: #FACC15;
+  --button-text-light: #1F2937;
+  --button-hover-bg-light: #e0b814;
+  --button-hover-text-light: #7C3AED;
+  --input-border-light: #ccc;
+  --input-bg-light: white;
+  --placeholder-color-light: #6B7280;
+
+  /* Dark Mode Colors */
+  --bg-color-dark: #1F2937;
+  --text-color-dark: #F3F4F6;
+  --title-shadow-dark: #9333EA;
+  --highlight-color-dark: #93C5FD;
+  --button-bg-dark: #FBBF24;
+  --button-text-dark: #111827;
+  --button-hover-bg-dark: #facc15;
+  --button-hover-text-dark: #C084FC;
+  --input-border-dark: #444;
+  --input-bg-dark: #374151;
+  --placeholder-color-dark: #D1D5DB;
+}
+
+/* Container */
+.feedback-container {
+  max-width: 600px;
+  margin: 60px auto 40px;
+  background-color: var(--bg-color-light);
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  font-family: 'Nunito', 'Poppins', sans-serif;
+  color: var(--text-color-light);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.feedback-container h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 44px;
+  color: var(--text-color-light);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.feedback-container p {
+  font-size: 18px;
+  color: var(--highlight-color-light);
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Success message */
+.feedback-success {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-align: center;
+  animation: fadeInOut 3s forwards;
+}
+
+/* Form */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs and textarea */
+.feedback-form input,
+.feedback-form textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  padding: 18px 15px;
+  margin-bottom: 25px;
+  border: 2px solid var(--input-border-light);
+  border-radius: 8px;
+  background-color: var(--input-bg-light);
+  color: var(--text-color-light);
+  resize: vertical;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.feedback-form input::placeholder,
+.feedback-form textarea::placeholder {
+  color: var(--placeholder-color-light);
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: var(--highlight-color-light);
+  background-color: #fff;
+}
+
+/* Submit Button */
+.feedback-form button {
+  background-color: var(--button-bg-light);
+  color: var(--button-text-light);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding: 1.3rem 0;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.feedback-form button:hover {
+  background-color: var(--button-hover-bg-light);
+  color: var(--button-hover-text-light);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .feedback-container {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .feedback-container h2 {
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .feedback-container p {
+  color: var(--highlight-color-dark);
+}
+
+body.dark-mode .feedback-success {
+  background-color: #2E7D32;
+}
+
+body.dark-mode .feedback-form input,
+body.dark-mode .feedback-form textarea {
+  border-color: var(--input-border-dark);
+  background-color: var(--input-bg-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .feedback-form input::placeholder,
+body.dark-mode .feedback-form textarea::placeholder {
+  color: var(--placeholder-color-dark);
+}
+
+body.dark-mode .feedback-form input:focus,
+body.dark-mode .feedback-form textarea:focus {
+  border-color: var(--highlight-color-dark);
+  background-color: #475569;
+}
+
+body.dark-mode .feedback-form button {
+  background-color: var(--button-bg-dark);
+  color: var(--button-text-dark);
+}
+
+body.dark-mode .feedback-form button:hover {
+  background-color: var(--button-hover-bg-dark);
+  color: var(--button-hover-text-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feedback-container {
+    margin: 40px 20px;
+    padding: 30px 20px;
+  }
+
+  .feedback-container h2 {
+    font-size: 36px;
+  }
+
+  .feedback-container p {
+    font-size: 16px;
+  }
+
+  .feedback-form input,
+  .feedback-form textarea {
+    font-size: 16px;
+    padding: 15px 12px;
+  }
+
+  .feedback-form button {
+    font-size: 16px;
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-container {
+    margin: 30px 10px;
+    padding: 25px 15px;
+  }
+
+  .feedback-container h2 {
+    font-size: 28px;
+  }
+
+  .feedback-container p {
+    font-size: 15px;
+  }
+
+  .feedback-form input,
+  .feedback-form textarea {
+    font-size: 15px;
+    padding: 12px 10px;
+  }
+
+  .feedback-form button {
+    font-size: 15px;
+    padding: 0.9rem 0;
+  }
+}
+
+/* Reuse fadeInOut from Login.css */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}

@@ -1,0 +1,125 @@
+/* FAQ.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  /* Light Mode Colors */
+  --bg-color-light: #F3F4F6;
+  --text-color-light: #1F2937;
+  --title-shadow-light: #7C3AED;
+  --highlight-color-light: #2563EB;
+
+  /* Dark Mode Colors */
+  --bg-color-dark: #1F2937;
+  --text-color-dark: #F3F4F6;
+  --title-shadow-dark: #9333EA;
+  --highlight-color-dark: #93C5FD;
+}
+
+/* Container */
+.faq-container {
+  max-width: 700px;
+  margin: 60px auto 40px;
+  background-color: var(--bg-color-light);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  font-family: 'Nunito', 'Poppins', sans-serif;
+  color: var(--text-color-light);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Heading */
+.faq-container h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 44px;
+  color: var(--text-color-light);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* FAQ Item */
+.faq-item {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 18px;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Question */
+.faq-item h3 {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--title-shadow-light);
+  margin-bottom: 8px;
+}
+
+/* Answer */
+.faq-item p {
+  font-size: 18px;
+  color: var(--text-color-light);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .faq-container {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .faq-container h2 {
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .faq-item h3 {
+  color: var(--title-shadow-dark);
+}
+
+body.dark-mode .faq-item p {
+  color: var(--text-color-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-container {
+    margin: 40px 20px;
+    padding: 25px 20px;
+  }
+
+  .faq-container h2 {
+    font-size: 36px;
+  }
+
+  .faq-item h3 {
+    font-size: 20px;
+  }
+
+  .faq-item p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-container {
+    margin: 30px 10px;
+    padding: 20px 15px;
+  }
+
+  .faq-container h2 {
+    font-size: 28px;
+  }
+
+  .faq-item h3 {
+    font-size: 18px;
+  }
+
+  .faq-item p {
+    font-size: 15px;
+  }
+}
